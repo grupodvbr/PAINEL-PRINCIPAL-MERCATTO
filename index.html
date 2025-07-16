@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>Painel Operacional</title>
-  <title>Mercatto Delícia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
@@ -78,10 +77,9 @@
 
   <div class="card">
     <h3>Gerência</h3>
-    <button onclick="location.href='https://grupodvbr.github.io/criar-reservas-mercatto/'">Criar Reserva</button>
-    <button onclick="location.href='https://grupodvbr.github.io/calendario-de-reservas-Mercatto/'">Visualizar reservas</button>
+    <button onclick="protegerAcesso('https://grupodvbr.github.io/criar-reservas-mercatto/')">Criar Reserva</button>
+    <button onclick="protegerAcesso('https://grupodvbr.github.io/calendario-de-reservas-Mercatto/')">Visualizar reservas</button>
   </div>
-</div>
 
   <div class="card">
     <h3>Contagens</h3>
@@ -93,9 +91,7 @@
 
   <div class="card">
     <h3>Requisições</h3>
-<button onclick="location.href='https://grupodvbr.github.io/requisicoes-mercatto/'">
-  Requisições Gerais
-</button>
+    <button onclick="location.href='https://grupodvbr.github.io/requisicoes-mercatto/'">Requisições Gerais</button>
   </div>
 
   <div class="card">
@@ -103,7 +99,21 @@
     <button onclick="location.href='https://exemplo.com/pesquisa-ambiente'">Pesquisa Ambiente</button>
     <button onclick="location.href='https://grupodvbr.github.io/avaliacao/'">Deixe sua opinião sobre melhorias para o sistema</button>
   </div>
+
 </div>
+
+<script>
+  function protegerAcesso(url) {
+    const senhaCorreta = "1030";
+    const senha = prompt("Digite a senha para acessar:");
+
+    if (senha === senhaCorreta) {
+      location.href = url;
+    } else if (senha !== null) {
+      alert("❌ Senha incorreta. Acesso negado.");
+    }
+  }
+</script>
 
 </body>
 </html>
