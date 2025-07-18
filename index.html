@@ -96,8 +96,9 @@
 
   <div class="card">
     <h3>Caixa</h3>
-    <button onclick="location.href='https://grupodvbr.github.io/CONTAGEM-DE-COMANDAS-MERCATTO/'">Registro de comandas</button>
+    <button onclick="protegerAcessoCaixa('https://grupodvbr.github.io/CONTAGEM-DE-COMANDAS-MERCATTO/')">Registro de comandas</button>
   </div>
+
   <div class="card">
     <h3>Pesquisas</h3>
     <button onclick="location.href='https://exemplo.com/pesquisa-ambiente'">Pesquisa Ambiente</button>
@@ -108,10 +109,21 @@
 
 <script>
   function protegerAcesso(url) {
-    const senhaCorreta = "1030";
-    const senha = prompt("Digite a senha para acessar:");
+    const senhaGerencia = "1030";
+    const senha = prompt("🔒 Digite a senha da gerência:");
 
-    if (senha === senhaCorreta) {
+    if (senha === senhaGerencia) {
+      location.href = url;
+    } else if (senha !== null) {
+      alert("❌ Senha incorreta. Acesso negado.");
+    }
+  }
+
+  function protegerAcessoCaixa(url) {
+    const senhaCaixa = "8486";
+    const senha = prompt("🔒 Digite a senha do caixa:");
+
+    if (senha === senhaCaixa) {
       location.href = url;
     } else if (senha !== null) {
       alert("❌ Senha incorreta. Acesso negado.");
